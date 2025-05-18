@@ -55,3 +55,27 @@ Array
     [cantidad] => 22
     [Cliente_ID] => 2
 )
+Array
+(
+    [nombreProducto] => alimento gato premium
+    [cantidad] => 2
+    [Cliente_ID] => 2
+)
+Array
+(
+    [nombreProducto] => alimento gato premium
+    [cantidad] => 2
+    [Cliente_ID] => 2
+)
+Array
+(
+    [nombreProducto] => alimento para perro
+    [cantidad] => 3
+    [Cliente_ID] => 2
+)
+Array
+(
+    [nombreProducto] => alimento para perro
+    [cantidad] => 22
+    [Cliente_ID] => 2
+)

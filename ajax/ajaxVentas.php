@@ -13,12 +13,14 @@ class ajaxVentas
 {
   public $_nombreProducto;
   public $_cantidad;
+  public $_Cliente_ID;
 
   public function ajaxNuevaVenta()
   {
     $datos = array(
       "nombreProducto" => $this->_nombreProducto,
-      "cantidad" => $this->_cantidad
+      "cantidad" => $this->_cantidad,
+      "Cliente_ID" => $this->_Cliente_ID
     );
     $respuesta = (new ctrVentas)->ctrRegistrarVenta($datos);
 
@@ -37,6 +39,7 @@ if (isset($_POST['nombreProducto']) && isset($_POST['cantidad'])) {
   $venta = new ajaxVentas();
   $venta->_nombreProducto = $_POST['nombreProducto'];
   $venta->_cantidad = $_POST['cantidad'];
+  $venta->_Cliente_ID = $_POST['Cliente_ID']; // Cliente_ID es opcional
   $venta->ajaxNuevaVenta();
 } else {
   header('Content-Type: application/json');
