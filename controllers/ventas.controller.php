@@ -16,4 +16,11 @@ class ctrVentas
     $respuesta = (new mdlVentas)->mdlListarVentas($table);
     return $respuesta;
   }
+
+  public function ctrListasClientes()
+  {
+    $table = "clientes";
+    $respuesta = (new mdlVentas)->mdlListarClientes($table);
+    return $respuesta;
+  }
 }

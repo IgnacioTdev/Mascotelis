@@ -6,6 +6,7 @@ require_once __DIR__ . '/controllers/ventas.controller.php';
 
 $productos = (new ctrProductos)->ctrListarProductos();
 $ventas = (new ctrVentas)->ctrListarVentas();
+$clientes = (new ctrVentas)->ctrListasClientes();
 
 ?>
 
@@ -89,6 +90,16 @@ $ventas = (new ctrVentas)->ctrListarVentas();
         </div>
         <div class="col-md-2">
           <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" required>
+        </div>
+        <div class="col-4">
+          <select name="Cliente_ID" id="Cliente_ID" class="form-select" required>
+            <option value="">Seleccionar cliente</option>
+            <?php foreach ($clientes as $c): ?>
+              <option value="<?= $c['ID_Cliente'] ?>">
+                <?= $c['Nombre_Cliente'] ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
         </div>
         <div class="col-md-2">
           <button type="submit" class="btn btn-success w-100">Vender</button>
