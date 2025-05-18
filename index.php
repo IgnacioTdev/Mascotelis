@@ -7,7 +7,6 @@ require_once __DIR__ . '/controllers/ventas.controller.php';
 $productos = (new ctrProductos)->ctrListarProductos();
 $ventas = (new ctrVentas)->ctrListarVentas();
 $clientes = (new ctrVentas)->ctrListasClientes();
-
 ?>
 
 <!doctype html>
@@ -17,7 +16,10 @@ $clientes = (new ctrVentas)->ctrListasClientes();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestión de Productos y Ventas</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- DataTables Bootstrap 5 CSS (debe ir después de Bootstrap) -->
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -128,23 +130,38 @@ $clientes = (new ctrVentas)->ctrListasClientes();
             <td><?= $v['Nombre_Cliente'] ?></td>
           </tr>
         <?php endforeach; ?>
-
+      </tbody>
     </table>
   </div>
 
+  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <!-- DataTables JS -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <!-- DataTables Bootstrap 5 JS -->
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <!-- Inicialización de DataTables -->
   <script>
     $(document).ready(function() {
-      $('#tablaProductos').DataTable();
-      $('#tablaVentas').DataTable();
+      $('#tablaProductos').DataTable({
+        paging: true,
+        pageLength: 10,
+        lengthMenu: [5, 10, 25, 50, 100],
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+        }
+      });
+      $('#tablaVentas').DataTable({
+        paging: true,
+        pageLength: 10,
+        lengthMenu: [5, 10, 25, 50, 100],
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+        }
+      });
     });
   </script>
-  <!-- Librerías necesarias -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <!-- Scripts separados -->
+  <!-- Scripts personalizados -->
   <script src="views/js/productos.js"></script>
   <script src="views/js/ventas.js"></script>
 </body>
