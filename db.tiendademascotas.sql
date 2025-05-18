@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS Ventas (
     ID_Venta INT AUTO_INCREMENT PRIMARY KEY,
     Fecha_Venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     Total int,
+    Cliente_ID INT,
     FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ID_Cliente)
 );
 
