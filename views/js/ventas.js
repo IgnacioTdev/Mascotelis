@@ -11,15 +11,16 @@ $(document).ready(function () {
       type: 'POST',
       url: 'ajax/ajaxVentas.php',
       data: datos,
-      
+      dataType: 'json', // <-- Muy importante para que jQuery lo convierta a objeto automáticamente
+
       success: function (response) {
-        let response = JSON.parse(response);
-        if (response === 'ok') {
+        console.log(response);
+        if (response.status === 'ok') {
           alert("✅ Venta registrada correctamente.");
           $('#formVenta')[0].reset();
           location.reload();
         } else {
-          alert("❌ Error al registrar la venta:\n" + response.status);
+          alert("❌ Error al registrar la venta:\n" + (response.mensaje || 'Error desconocido'));
         }
       },
       error: function () {
