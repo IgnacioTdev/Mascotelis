@@ -2,10 +2,6 @@
 require_once "../controllers/productos.controller.php";
 require_once "../models/productos.model.php";
 
-// if ($_SERVER["REQUEST_METHOD"] === "POST") {
-//   $registro = (new ctrProductos)->ctrRegistrarProducto();
-//   echo json_encode(["status" => $registro]);
-// }
 
 Class ajaxProductos{
     public $_id;

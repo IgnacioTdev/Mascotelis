@@ -5,11 +5,13 @@ $(document).ready(function () {
     e.preventDefault();
 
     let datos = $(this).serialize();
+    console.log(datos);
 
     $.ajax({
       type: 'POST',
       url: 'ajax/ajaxVentas.php',
       data: datos,
+      
       success: function (response) {
         let response = JSON.parse(response);
         if (response === 'ok') {
