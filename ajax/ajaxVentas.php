@@ -1,6 +1,6 @@
 <?php
 require_once "../controllers/ventas.controller.php";
-
+require_once "../models/ventas.model.php";
 
 class ajaxVentas{
   public $_id;
@@ -12,14 +12,7 @@ class ajaxVentas{
     $respuesta = (new ctrVentas)->ctrRegistrarVenta($datos);
     echo $respuesta;
 
-
   }
-
-
-
-
-
-
 }
 
 

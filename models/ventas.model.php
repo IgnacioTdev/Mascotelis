@@ -2,9 +2,9 @@
 require_once "conexion.php";
 
 class mdlVentas {
-    public function mdlRegistrarVentas($datos){
+    public function mdlRegistrarVentas($table, $datos){
       $stmt= (new Conexion)->conectar()->prepare("
-      INSERT INTO Ventas VALUES (NULL, :fechaVenta, :total, 1)
+      INSERT INTO $table VALUES (NULL, :fechaVenta, :total, 1)
       ");
 
       $stmt->bindParam("fechaVenta",$datos["fechaVenta"], PDO::PARAM_STR);
