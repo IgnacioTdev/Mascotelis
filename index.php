@@ -3,14 +3,13 @@ require_once 'models/productos.model.php';
 require_once __DIR__ . '/controllers/productos.controller.php';
 require_once __DIR__ . '/controllers/ventas.controller.php';
 
-$productos = (new ctrProductos)->ctrListarProductos();
+$productos = (new ctrProductos)->ctrListarProductos(); 
 
 
 ?>
 
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +19,6 @@ $productos = (new ctrProductos)->ctrListarProductos();
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-
 <body class="p-4">
   <div class="container">
     <h2 class="mb-4">🐾 Registrar Producto</h2>
@@ -72,29 +70,28 @@ $productos = (new ctrProductos)->ctrListarProductos();
     </table>
 
     <hr class="my-4">
-    <table id="tablaVentas" class="table table-bordered">
-      <h2 class="mb-4">Registrar Venta</h2>
-      <form id="formVenta" method="POST">
-        <div class="row g-3">
-          <div class="col-md-4">
-            <select name="producto_id" class="form-select" required>
-              <option value="">Seleccionar producto</option>
-              <?php foreach ($productos as $p): ?>
-                <option value="<?= $p['ID_Producto'] ?>">
-                  <?= $p['Nombre'] ?> (stock: <?= $p['stock'] ?>) (precio: <?= $p['precio_venta'] ?>)
-                </option>
-              <?php endforeach; ?>
-            </select>
-          </div>
-          <div class="col-md-2">
-            <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" required>
-          </div>
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-success w-100">Vender</button>
-          </div>
+
+    <h2 class="mb-4">Registrar Venta</h2>
+    <form id="formVenta" method="POST">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <select name="producto_id" class="form-select" required>
+            <option value="">Seleccionar producto</option>
+            <?php foreach ($productos as $p): ?>
+              <option value="<?= $p['ID_Producto'] ?>">
+                <?= $p['Nombre'] ?> (Stock: <?= $p['stock'] ?>)
+              </option>
+            <?php endforeach; ?>
+          </select>
         </div>
-      </form>
-    </table>
+        <div class="col-md-2">
+          <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" required>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success w-100">Vender</button>
+        </div>
+      </div>
+    </form>
 
     <hr class="my-4">
 
@@ -109,7 +106,7 @@ $productos = (new ctrProductos)->ctrListarProductos();
           <th>Fecha</th>
         </tr>
       </thead>
-
+    
     </table>
   </div>
 
@@ -117,17 +114,16 @@ $productos = (new ctrProductos)->ctrListarProductos();
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('#tablaProductos').DataTable();
       $('#tablaVentas').DataTable();
     });
   </script>
   <!-- Librerías necesarias -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <!-- Scripts separados -->
-  <script src="views/js/productos.js"></script>
-  <script src="views/js/ventas.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>  
+<!-- Scripts separados -->
+<script src="views/js/productos.js"></script>
+<script src="views/js/ventas.js"></script>
 </body>
-
 </html>
