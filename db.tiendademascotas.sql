@@ -71,6 +71,5 @@ CREATE TABLE IF NOT EXISTS Detalle_Ventas (
 
 
 -- Crear índices para mejorar el rendimiento
-CREATE INDEX idx_producto_codigo ON Productos(Codigo_Producto);
+CREATE INDEX idx_producto_codigo ON Productos(codigo);
 CREATE INDEX idx_producto_nombre ON Productos(Nombre);
-CREATE INDEX idx_movimiento_fecha ON Movimientos(Fecha_Movimiento)
