@@ -79,7 +79,7 @@ $productos = (new ctrProductos)->ctrListarProductos();
             <option value="">Seleccionar producto</option>
             <?php foreach ($productos as $p): ?>
               <option value="<?= $p['ID_Producto'] ?>">
-                <?= $p['nombre'] ?> (stock: <?= $p['stock'] ?>);
+                <?= $p['Nombre'] ?> (stock: <?= $p['stock'] ?>) (precio: <?= $p['precio_venta']?>)
               </option>
             <?php endforeach; ?>
           </select>

@@ -11,13 +11,13 @@ $(document).ready(function () {
       url: 'ajax/ajaxVentas.php',
       data: datos,
       success: function (response) {
-        let res = JSON.parse(response);
-        if (res.status === 'ok') {
+        let response = JSON.parse(response);
+        if (response === 'ok') {
           alert("✅ Venta registrada correctamente.");
           $('#formVenta')[0].reset();
           location.reload();
         } else {
-          alert("❌ Error al registrar la venta:\n" + res.status);
+          alert("❌ Error al registrar la venta:\n" + response.status);
         }
       },
       error: function () {
