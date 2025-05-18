@@ -12,7 +12,7 @@ class ctrProductos {
 
   public function ctrListarProductos() {
     $table ="productos";
-    $respuesta =(new mdlProductos)->  mdlListarProductos($table);
+    $respuesta =(new mdlProductos)->mdlListarProductos($table);
     return $respuesta;
   }
 }

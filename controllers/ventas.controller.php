@@ -3,7 +3,7 @@
 class ctrVentas {
   public function ctrRegistrarVenta($datos){
     $table = "ventas";
-    $respuesta = (new mdlVentas)->mdlRegistrarVenta($datos);
+    $respuesta = (new mdlVentas)->mdlRegistrarVentas($datos);
     return $respuesta;
   }
 
