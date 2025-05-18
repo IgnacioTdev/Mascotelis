@@ -18,4 +18,13 @@ class mdlVentas
       return "error";
     }
   }
+
+  public function mdlListarVentas($table)
+  {
+    $stmt = (new Conexion)->conectar()->prepare("
+      SELECT * FROM $table
+      ");
+    $stmt->execute();
+    return $stmt->fetchAll();
+  }
 }

@@ -1,11 +1,19 @@
 <?php
 
-class ctrVentas {
+class ctrVentas
+{
 
-  public function ctrRegistrarVenta($datos){
+  public function ctrRegistrarVenta($datos)
+  {
     $table = "ventas";
     $respuesta = (new mdlVentas)->mdlRegistrarVentas($table, $datos);
     return $respuesta;
   }
-}
 
+  public function ctrListarVentas()
+  {
+    $table = "ventas";
+    $respuesta = (new mdlVentas)->mdlListarVentas($table);
+    return $respuesta;
+  }
+}

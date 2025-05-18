@@ -1,10 +1,11 @@
 <?php
 require_once 'models/productos.model.php';
+require_once 'models/ventas.model.php';
 require_once __DIR__ . '/controllers/productos.controller.php';
 require_once __DIR__ . '/controllers/ventas.controller.php';
 
 $productos = (new ctrProductos)->ctrListarProductos();
-
+$ventas = (new ctrVentas)->ctrListarVentas();
 
 ?>
 
@@ -104,10 +105,18 @@ $productos = (new ctrProductos)->ctrListarProductos();
           <th>ID Venta</th>
           <th>Producto</th>
           <th>Cantidad</th>
-          <th>Total</th>
-          <th>Fecha</th>
+          <th>Cliente</th>
         </tr>
       </thead>
+      <tbody>
+        <?php foreach ($ventas as $v): ?>
+          <tr>
+            <td><?= $v['ID_Venta'] ?></td>
+            <td><?= $v['nombreProducto'] ?></td>
+            <td><?= $v['cantidad'] ?></td>
+            <td><?= $v['Cliente_ID'] ?></td>
+          </tr>
+        <?php endforeach; ?>
 
     </table>
   </div>
