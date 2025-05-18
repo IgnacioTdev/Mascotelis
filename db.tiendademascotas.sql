@@ -75,3 +75,7 @@ CREATE INDEX idx_producto_codigo ON Productos(codigo);
 CREATE INDEX idx_producto_nombre ON Productos(Nombre);
 INSERT INTO Clientes (Nombre_Cliente, Telefono, Correo_Electronico, Direccion) VALUES
 ('Juan Perez', '123456789', 'JUAN@GMAIL.COM', 'Calle Falsa 123');
+INSERT INTO Categorias (Nombre_Categoria) VALUES
+('Alimento'),
+('Juguetes'),
+('Accesorios');
