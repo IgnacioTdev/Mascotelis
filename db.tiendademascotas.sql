@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS Clientes (
 -- Tabla de Ventas
 CREATE TABLE IF NOT EXISTS Ventas (
     ID_Venta INT AUTO_INCREMENT PRIMARY KEY,
-    Fecha_Venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    Total int,
+    nombreProducto text DEFAULT CURRENT_TIMESTAMP,
+    cantidad int,
     Cliente_ID INT,
     FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ID_Cliente)
 );
@@ -73,3 +73,5 @@ CREATE TABLE IF NOT EXISTS Detalle_Ventas (
 -- Crear índices para mejorar el rendimiento
 CREATE INDEX idx_producto_codigo ON Productos(codigo);
 CREATE INDEX idx_producto_nombre ON Productos(Nombre);
+INSERT INTO Clientes (Nombre_Cliente, Telefono, Correo_Electronico, Direccion) VALUES
+('Juan Perez', '123456789', 'JUAN@GMAIL.COM', 'Calle Falsa 123');

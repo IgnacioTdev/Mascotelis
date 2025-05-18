@@ -18,3 +18,23 @@ Array
     [producto_id] => 2
     [cantidad] => 66
 )
+Array
+(
+    [producto_id] => alimento para perro
+    [cantidad] => 2
+)
+Array
+(
+    [producto_id] => alimento para perro
+    [cantidad] => 2
+)
+Array
+(
+    [producto_id] => alimento para perro
+    [cantidad] => 66
+)
+Array
+(
+    [nombreProducto] => alimento para perro
+    [cantidad] => 33
+)

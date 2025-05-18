@@ -11,13 +11,13 @@ file_put_contents(__DIR__ . "/debug.log", print_r($_POST, true), FILE_APPEND);
 
 class ajaxVentas
 {
-  public $_producto_id;
+  public $_nombreProducto;
   public $_cantidad;
 
   public function ajaxNuevaVenta()
   {
     $datos = array(
-      "producto_id" => $this->_producto_id,
+      "nombreProducto" => $this->_nombreProducto,
       "cantidad" => $this->_cantidad
     );
     $respuesta = (new ctrVentas)->ctrRegistrarVenta($datos);
@@ -33,9 +33,9 @@ class ajaxVentas
 }
 
 // Instanciación y llamada según POST
-if (isset($_POST['producto_id']) && isset($_POST['cantidad'])) {
+if (isset($_POST['nombreProducto']) && isset($_POST['cantidad'])) {
   $venta = new ajaxVentas();
-  $venta->_producto_id = $_POST['producto_id'];
+  $venta->_nombreProducto = $_POST['nombreProducto'];
   $venta->_cantidad = $_POST['cantidad'];
   $venta->ajaxNuevaVenta();
 } else {
