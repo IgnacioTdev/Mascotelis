@@ -24,8 +24,7 @@ CREATE TABLE IF NOT EXISTS Productos (
     codigo VARCHAR(100),
     stock INT ,
     precio_venta INT,
-    Categorias INT,
-   
+    Categoria_ID INT,
     FOREIGN KEY (Categoria_ID) REFERENCES Categorias(ID_Categoria)
     );
 
