@@ -1,6 +1,6 @@
 <?php
-require_once "/controllers/productos.controller.php";
-require_once "/models/productos.model.php";
+require_once "../controllers/productos.controller.php";
+require_once "../models/productos.model.php";
 
 // if ($_SERVER["REQUEST_METHOD"] === "POST") {
 //   $registro = (new ctrProductos)->ctrRegistrarProducto();
