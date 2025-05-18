@@ -38,3 +38,8 @@ Array
     [nombreProducto] => alimento para perro
     [cantidad] => 33
 )
+Array
+(
+    [nombreProducto] => alimento gato premium
+    [cantidad] => 12
+)

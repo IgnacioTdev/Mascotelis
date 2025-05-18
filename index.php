@@ -114,7 +114,7 @@ $ventas = (new ctrVentas)->ctrListarVentas();
             <td><?= $v['ID_Venta'] ?></td>
             <td><?= $v['nombreProducto'] ?></td>
             <td><?= $v['cantidad'] ?></td>
-            <td><?= $v['Cliente_ID'] ?></td>
+            <td><?= $v['Nombre_Cliente'] ?></td>
           </tr>
         <?php endforeach; ?>
 

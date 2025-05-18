@@ -22,8 +22,10 @@ class mdlVentas
   public function mdlListarVentas($table)
   {
     $stmt = (new Conexion)->conectar()->prepare("
-      SELECT * FROM $table
-      ");
+    SELECT $table.ID_Venta, ventas.cantidad, ventas.nombreProducto, clientes.Nombre_Cliente
+    FROM ventas
+    INNER JOIN clientes ON ventas.Cliente_ID = clientes.ID_Cliente
+");
     $stmt->execute();
     return $stmt->fetchAll();
   }
