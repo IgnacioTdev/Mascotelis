@@ -1,18 +1,19 @@
 <?php
 
+class ctrProductos
+{
 
-class ctrProductos {
-
-  public function ctrRegistrarProducto($datos) {
+  public function ctrRegistrarProducto($datos)
+  {
     $table = "productos";
-    $respuesta = (new mdlProductos)->mdlRegistrarProducto($table,$datos);
+    $respuesta = (new mdlProductos)->mdlRegistrarProducto($table, $datos);
     return $respuesta;
-
   }
 
-  public function ctrListarProductos() {
-    $table ="productos";
-    $respuesta =(new mdlProductos)->mdlListarProductos($table);
+  public function ctrListarProductos()
+  {
+    $table = "productos";
+    $respuesta = (new mdlProductos)->mdlListarProductos($table);
     return $respuesta;
   }
 }

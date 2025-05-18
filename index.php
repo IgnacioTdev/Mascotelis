@@ -1,8 +1,10 @@
 <?php
-require_once 'controllers/productos.controller.php';
-require_once 'controllers/ventas.controller.php';
+require_once 'models/productos.model.php';
+require_once __DIR__ . '/controllers/productos.controller.php';
+require_once __DIR__ . '/controllers/ventas.controller.php';
 
 $productos = (new ctrProductos)->ctrListarProductos();
+
 
 ?>
 
@@ -17,8 +19,6 @@ $productos = (new ctrProductos)->ctrListarProductos();
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-
 </head>
 
 <body class="p-4">
